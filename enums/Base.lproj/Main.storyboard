@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,11 +16,104 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Aqf-Zd-hJw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.28627450980000002" green="0.28627450980000002" blue="0.28627450980000002" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="3IT-aV-g40" userLabel="CarStack">
+                                <rect key="frame" x="118" y="70" width="366" height="528"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="ZUK-mC-b4D">
+                                        <rect key="frame" x="107" y="0.0" width="152" height="440"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y1P-I7-0sa" customClass="CarButton" customModule="enums" customModuleProvider="target">
+                                                <rect key="frame" x="3" y="0.0" width="147" height="82"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="147" id="jfN-pv-qYC"/>
+                                                    <constraint firstAttribute="height" constant="82" id="oZt-fm-ION"/>
+                                                </constraints>
+                                                <state key="normal" image="bwm"/>
+                                                <connections>
+                                                    <action selector="onButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hF3-ud-o04"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SX9-eB-0VS" customClass="CarButton" customModule="enums" customModuleProvider="target">
+                                                <rect key="frame" x="11" y="107" width="131" height="98"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="131" id="7qP-e1-OBj"/>
+                                                    <constraint firstAttribute="height" constant="98" id="kdU-mV-84H"/>
+                                                </constraints>
+                                                <state key="normal" image="honda"/>
+                                                <connections>
+                                                    <action selector="onButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAG-E5-9Rt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SU8-Gu-IMa" customClass="CarButton" customModule="enums" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="230" width="152" height="91"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="152" id="T1k-RP-f8q"/>
+                                                    <constraint firstAttribute="height" constant="91" id="foV-gA-8Mn"/>
+                                                </constraints>
+                                                <state key="normal" image="tesla"/>
+                                                <connections>
+                                                    <action selector="onButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vll-e2-bJz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qaG-yL-79l" customClass="CarButton" customModule="enums" customModuleProvider="target">
+                                                <rect key="frame" x="13" y="346" width="126" height="94"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="126" id="AlZ-ye-KuY"/>
+                                                    <constraint firstAttribute="height" constant="94" id="r2j-W3-jwf"/>
+                                                </constraints>
+                                                <state key="normal" image="subaru"/>
+                                                <connections>
+                                                    <action selector="onButtonTap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZIG-le-AXl"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Ynf-GB-16S" userLabel="LabelStack">
+                                        <rect key="frame" x="0.0" y="490" width="366" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click a Pic!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSU-BK-RAR">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="38"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="38" id="2ON-4d-Msv"/>
+                                                    <constraint firstAttribute="width" constant="366" id="bBK-2v-PdO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3IT-aV-g40" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BdQ-X7-Cft"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Aqf-Zd-hJw" secondAttribute="trailing" constant="-20" id="RfQ-bw-RL9"/>
+                            <constraint firstItem="Aqf-Zd-hJw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="SBl-rV-oP5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Aqf-Zd-hJw" secondAttribute="bottom" id="nxk-He-uVg"/>
+                            <constraint firstItem="Aqf-Zd-hJw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tbo-Hy-ke2"/>
+                            <constraint firstItem="3IT-aV-g40" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zvG-6p-Vuv"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carTypeLbl" destination="HSU-BK-RAR" id="VWp-QV-k7E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="340" y="366"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bwm" width="884" height="497"/>
+        <image name="honda" width="640" height="480"/>
+        <image name="subaru" width="1024" height="768"/>
+        <image name="tesla" width="2647" height="1600"/>
+    </resources>
 </document>
